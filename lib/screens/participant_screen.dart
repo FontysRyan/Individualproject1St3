@@ -15,6 +15,8 @@ class ParticipantScreen extends StatelessWidget {
            
             Text( // main header
               'Participant Screen',
+              // No need to create a new textTheme variable from what I learned. 
+              // I can just use Theme.of(context).textTheme inline to get my theme and I also imported it in the main.dart file so it should work here as well.
               style: Theme.of(context).textTheme.headlineLarge,
               textAlign: TextAlign.center,
             ),
