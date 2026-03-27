@@ -4,6 +4,7 @@ class AppTheme {
   static ThemeData originalTheme = ThemeData(
     useMaterial3: true,
     scaffoldBackgroundColor: Colors.transparent,
+
     colorScheme: ColorScheme.fromSeed(seedColor: Colors.purple),
 
     // Material 3 Typography (aka textTheme)

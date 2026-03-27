@@ -14,46 +14,50 @@ class InstructorScreen extends StatelessWidget {
       appBar: AppBar(title: const Text('Instructor'), centerTitle: true),
       child: Center(
         child: Column(
-  mainAxisSize: MainAxisSize.min,
-  children: [
-    Text(
-      'Instructor Screen',
-      style: Theme.of(context).textTheme.headlineLarge,
-    ),
-    const SizedBox(height: 8),
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              'Instructor Screen',
+              style: Theme.of(context).textTheme.headlineLarge,
+            ),
+            const SizedBox(height: 8),
 
-    Text(
-      'Choose your exercise',
-      style: Theme.of(context).textTheme.bodyMedium,
-    ),
-    const SizedBox(height: 24),
+            Text(
+              'Choose your exercise',
+              style: Theme.of(context).textTheme.bodyMedium,
+            ),
+            const SizedBox(height: 24),
 
-    ...exercises.map((exerciseData) { // Loop through the exercise list and create a button for each exercise in the exercise_data.dart file
-      return Padding(
-        padding: const EdgeInsets.symmetric(vertical: 4),
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) =>
-                    ExerciseExampleScreen(selectedInstructorExercise: exerciseData), // Pass the selected exercise data to the ExerciseExampleScreen
-              ),
-            );
-          },
-          child: Text(exerciseData.name),
+            ...exercises.map((exerciseData) {
+              // Loop through the exercise list and create a button for each exercise in the exercise_data.dart file
+              return Padding(
+                padding: const EdgeInsets.symmetric(vertical: 4),
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ExerciseExampleScreen(
+                          selectedInstructorExercise: exerciseData,
+                        ), // Pass the selected exercise data to the ExerciseExampleScreen
+                      ),
+                    );
+                  },
+                  child: Text(exerciseData.name),
+                ),
+              );
+            }),
+
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: const Text('Go back'),
+            ),
+
+
+          ],
         ),
-      );
-    }).toList(),
-
-    ElevatedButton(
-      onPressed: () {
-        Navigator.pop(context);
-      },
-      child: const Text('Go back'),
-    ),
-  ],
-)
       ),
     );
   }
