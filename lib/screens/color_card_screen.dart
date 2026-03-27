@@ -29,20 +29,7 @@ class ColorCardScreen extends StatelessWidget {
             const StroopCard(),
 
             const SizedBox(height: 24),
-            
-            // You want to see the full color card.
-            // ElevatedButton(
-            //   onPressed: () {
-            //     // Returns the instructor to their screen to pick the next exercise
-            //     Navigator.push(
-            //       context,
-            //       MaterialPageRoute(
-            //         builder: (context) => const InstructorScreen(),
-            //       ),
-            //     );
-            //   },
-            //   child: const Text('Return to instructor screen'),
-            // ),
+
           ],
         ),
       ),
