@@ -23,7 +23,6 @@ class ColorCardScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
 
-
             // StroopCard is fully self-contained:
             // it manages its own state and handles taps internally
             const StroopCard(),
