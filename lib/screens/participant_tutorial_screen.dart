@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import '../widgets/app_scaffold.dart';
-import '../screens/participant_tutorial_screen.dart'; // navigate to tutorial screen from participant screen
 
-class ParticipantScreen extends StatelessWidget {
-  const ParticipantScreen({super.key});
+class ParticipantTutorialScreen extends StatelessWidget {
+  const ParticipantTutorialScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return AppScaffold(
-      appBar: AppBar(title: Text('Participant')),
+      appBar: AppBar(title: Text('Participant Tutorial')),
+
       child: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
            
             Text( // main header
-              'Participant Screen',
+              'Participant Tutorial',
               // No need to create a new textTheme variable from what I learned. 
               // I can just use Theme.of(context).textTheme inline to get my theme and I also imported it in the main.dart file so it should work here as well.
               style: Theme.of(context).textTheme.headlineLarge,
@@ -25,31 +25,11 @@ class ParticipantScreen extends StatelessWidget {
            
             // Subheader (uses theme.bodyMedium)
             Text(
-              'Follow the instructor’s color cards.',
-              style: Theme.of(context).textTheme.bodyMedium,
-              textAlign: TextAlign.center,
-            ),
-            Text(
-              'See the poster for details or press the tutorial button',
+              'This is the participant tutorial screen. Follow the instructor’s color cards.',
               style: Theme.of(context).textTheme.bodyMedium,
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 20),
-
-            // Button to navigate to the ParticipantTutorialScreen
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => ParticipantTutorialScreen(),
-                  ),
-                );
-              },
-              child: const Text('Tutorial'),
-            ),
-
-            // Button to go back to the previous screen
             ElevatedButton(
               onPressed: () {
                 Navigator.pop(context);
