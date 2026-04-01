@@ -61,7 +61,7 @@ class StroopCard extends StatelessWidget {
     return Text(
       _getColorLabel(item.word),       // shows the WORD (e.g. "RED")
       style: TextStyle(
-        fontSize: 48,
+        fontSize: 128,
         fontWeight: FontWeight.bold,
         color: _getFlutterColor(item.textColor), // drawn in the INK COLOR (may differ from word)
       ),

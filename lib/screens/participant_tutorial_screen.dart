@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import '../widgets/tutorial_card.dart';
 import '../widgets/app_scaffold.dart';
+import '../data/participant_tutorial_data.dart'; // Import the tutorial data
 
 class ParticipantTutorialScreen extends StatelessWidget {
   const ParticipantTutorialScreen({super.key});
@@ -7,29 +9,41 @@ class ParticipantTutorialScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppScaffold(
-      appBar: AppBar(title: Text('Participant Tutorial')),
-
+      appBar: AppBar(title: const Text('Participant Tutorial')),
       child: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-           
-            Text( // main header
+            // HEADER
+            Text(
               'Participant Tutorial',
-              // No need to create a new textTheme variable from what I learned. 
-              // I can just use Theme.of(context).textTheme inline to get my theme and I also imported it in the main.dart file so it should work here as well.
               style: Theme.of(context).textTheme.headlineLarge,
               textAlign: TextAlign.center,
             ),
-            const SizedBox(height: 8), // spaces
-           
-            // Subheader (uses theme.bodyMedium)
+            const SizedBox(height: 8),
+
+            // SUBTEXT
             Text(
-              'This is the participant tutorial screen. Follow the instructor’s color cards.',
+              'Follow the steps below during the exercise.',
               style: Theme.of(context).textTheme.bodyMedium,
               textAlign: TextAlign.center,
             ),
+
             const SizedBox(height: 20),
+
+            // Pageview (using the tutorialSteps list from participant_tutorial_data.dart to create a card for each step)
+            SizedBox(
+              height: 400,
+              child: PageView(
+                children: tutorialSteps
+                    .map((step) => TutorialCard(step: step))
+                    .toList(),
+              ),
+            ), // 
+
+            const SizedBox(height: 20),
+
+            // BUTTON BACK
             ElevatedButton(
               onPressed: () {
                 Navigator.pop(context);
