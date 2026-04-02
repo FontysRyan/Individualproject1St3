@@ -64,6 +64,8 @@ flutter:
     - assets/images/jump.png
     - assets/images/push-up.png
     - assets/images/forwardLung.png
+    - assets/images/step 1 image.png
+    - assets/images/step 2 image.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

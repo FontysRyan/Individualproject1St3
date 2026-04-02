@@ -35,7 +35,7 @@ class ParticipantTutorialScreen extends StatelessWidget {
             SizedBox(
               height: 400,
               child: PageView(
-                children: tutorialSteps
+                children: tutorialSteps // our data list from participant_tutorial_data.dart, we can replace this if nessary. (dynamic data list)
                     .map((step) => TutorialCard(step: step))
                     .toList(),
               ),
